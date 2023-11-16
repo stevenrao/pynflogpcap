@@ -66,7 +66,7 @@ def convert( infilename, outfilename ):
             print('Unknown ip family ', family)
             continue
         
-        # 伪造一个以太网数据包 + ip数据包
+        # 伪造一个以太网数据包 + 原来真实的ip数据包
         ethernet_packet = Ether() / ip_packet
         ethernet_packets.append(ethernet_packet)
     wrpcap(outfilename, ethernet_packets)
